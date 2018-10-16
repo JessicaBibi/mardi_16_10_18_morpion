@@ -1,6 +1,6 @@
 # mardi_16_10_18_morpion
 
-##Exercice Tic Tac Toe
+## Exercice Tic Tac Toe
 
 Projet du mardi 16 Octobre, 3ème semaine de THP
 
