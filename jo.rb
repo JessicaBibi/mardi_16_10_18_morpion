@@ -5,10 +5,12 @@ joueur_2 = gets.chomp
 
 class BoardCase
   #TO DO : la classe a 2 attr_accessor, sa valeur (X, O, ou vide), ainsi que son numéro de case)
-
+  attr_accessor :valeur, :case_num
   
-  def initialize
+  def initialize(valeur, case_num)
     #TO DO doit régler sa valeur, ainsi que son numéro de case
+    @valeur = valeur
+    @case_num = case_num 
   end
   
   def to_s
@@ -18,15 +20,26 @@ class BoardCase
 end
 
 class Board
-  include Enumerable
+  # include Enumerable
+  attr_accessor :array_case
   #TO DO : la classe a 1 attr_accessor, une array qui contient les BoardCases
 
 
   def initialize
-    #TO DO :
+    
+    # case_2 = BoardCase.new(" ", 2)
+    array_case = [1, 2, 3, 4, 5, 6, 7, 8, 9] 
+    array_case.each do |i|
+      BoardCase.new(" ", i)  
+    end  
+
+
+  end
+     #TO DO :
     #Quand la classe s'initialize, elle doit créer 9 instances BoardCases
     #Ces instances sont rangées dans une array qui est l'attr_accessor de la classe
-  end
+
+
 
   def to_s
   #TO DO : afficher le plateau
@@ -40,6 +53,7 @@ class Board
   def victory?
     #TO DO : qui gagne ?
   end
+end
 
 class Player
   #TO DO : la classe a 2 attr_accessor, son nom, sa valeur (X ou O). Elle a un attr_writer : il a gagné ?
@@ -68,4 +82,6 @@ class Game
 
 end
 
-Game.new.go
+# Game.new.go
+
+puts board = Board.new 
