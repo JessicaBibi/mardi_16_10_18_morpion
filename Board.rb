@@ -1,47 +1,48 @@
 class Board
   include Enumerable
   #TO DO : la classe a 1 attr_accessor, une array qui contient les BoardCases
-  attr_accessor :position
+  attr_accessor :array_cases
 
-
-  def initialize(position)
+  def initialize
     #TO DO :
     #Quand la classe s'initialize, elle doit créer 9 instances BoardCases
+    @array_cases = Array.new
     #Ces instances sont rangées dans une array qui est l'attr_accessor de la classe
-    @position = BoardCase.new
-    @position = position[1..9]
+    9.times do |i|
+      @array_cases.push(BoardCase.new(nil,i+1))
+    end
 
   end
 
   def to_s
   #TO DO : afficher le plateau
-  puts " #{position[1]} | #{position[2]} | #{position[3]}"
-  10.times do puts "-"
-  end
-  puts " #{position[4]} | #{position[5]} | #{position[6]}"
-  10.times do puts "-"
-  end
-  puts " #{position[7]} | #{position[8]} | #{position[9]}"
 
+    @array_cases.length.times do |i|
+      if @array_cases[i].valeur == nil
+        print "#{@array_cases[i].case_number}        "
+      else 
+        print "#{@array_cases[i].valeur}        "
+      end 
+
+      if i+1 == 3
+        puts " "
+      elsif i+1 == 6
+        puts " "
+      else 
+    
+      end
+        
+    end 
+    puts " "
   end
 
-  def play(player_name, value)
+  def play (case_selec, valeur_player)
     #TO DO : une méthode qui change la BoardCase jouée en fonction de la valeur du joueur (X, ou O)
-    puts "#{player_name} choose a position between 1 and 9"
-    number_case = gets.chomp.to_i
+      @array_cases[case_selec-1].valeur = valeur_player
   end
 
   def victory?
     #TO DO : qui gagne ?
-    if (@position[1] == @position[2] && @position[2] == @position[3]) || 
-       (@position[4] == @position[5] && @position[5] == @position[6]) || 
-       (@position[7] == @position[8] && @position[8] == @position[9]) || 
-       (@position[1] == @position[5] && @position[5] == @position[9]) || 
-       (@position[3] == @position[5] && @position[5] == @position[7]) || 
-       (@position[1] == @position[4] && @position[4] == @position[7]) || 
-       (@position[2] == @position[5] && @position[5] == @position[8]) || 
-       (@position[3] == @position[6] && @position[6] == @position[9])
-    return "Victory"
-    end
   end
+
 end
