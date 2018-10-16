@@ -1,6 +1,6 @@
-require_relative 'Board.rb'
-require_relative 'Boardcase.rb'
-require_relative 'Player.rb'
+require_relative "Board.rb"
+require_relative "Boardcase.rb"
+require_relative "Player.rb"
 
 class Game
 
@@ -141,7 +141,7 @@ class Game
     if other_game == 1
       Game.new.go
     else
-      puts "à la prochain"
+      puts "à la prochaine"
       puts "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     end 
 
