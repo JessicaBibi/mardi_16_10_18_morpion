@@ -19,9 +19,11 @@ class Board
 
     @array_cases.length.times do |i|
       if @array_cases[i].valeur == nil
-        print "#{@array_cases[i].case_number}        "
+        print "#{@array_cases[i].case_number}"
+        print "|"
       else 
-        print "#{@array_cases[i].valeur}        "
+        print "#{@array_cases[i].valeur}"
+        print "|"
       end 
 
       if i+1 == 3
