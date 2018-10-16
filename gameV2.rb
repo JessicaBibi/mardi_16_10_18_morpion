@@ -143,6 +143,7 @@ class Game
       Game.new.go
     else
       puts "à la prochaine"
+      puts "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     end 
 
   end
