@@ -15,6 +15,7 @@ class BoardCase
   
   def to_s
 #     #TO DO : doit renvoyer la valeur au format string
+  return valeur.to_s
   end
 
 end
@@ -23,27 +24,23 @@ class Board
   include Enumerable
   attr_accessor :num_case
   #TO DO : la classe a 1 attr_accessor, une array qui contient les BoardCases
-
-
   def initialize
-    @A_1 = BoardCase.new	@A_1 = 1
-    @A_2 = BoardCase.new	@A_2 = 2
-    @A_3 = BoardCase.new	@A_3 = 3
-    @B_1 = BoardCase.new	@B_1 = 4
-    @B_2 = BoardCase.new	@B_2 = 5
-    @B_3 = BoardCase.new	@B_3 = 6
-    @C_1 = BoardCase.new	@C_1 = 7
-    @C_2 = BoardCase.new	@C_2 = 8
-    @C_3 = BoardCase.new 	@C_3 = 9
+  	
+	@A_1 = BoardCase.new(nil, 1)
+    @A_2 = BoardCase.new(nil, 2)	
+    @A_3 = BoardCase.new(nil, 3)	
+    @B_1 = BoardCase.new(nil, 4)	
+    @B_2 = BoardCase.new(nil, 5)	
+    @B_3 = BoardCase.new(nil, 6)	
+    @C_1 = BoardCase.new(nil, 7)
+    @C_2 = BoardCase.new(nil, 8)
+    @C_3 = BoardCase.new(nil, 9)
 
     @num_case = [ @A_1.to_s, @A_2.to_s, @A_3.to_s, @B_1.to_s, @B_2.to_s, @B_3.to_s, @C_1.to_s, @C_2.to_s, @C_3.to_s]
-        # array_case = [1, 2, 3, 4, 5, 6, 7, 8, 9] 
-    # array_case.each do |" " i|
-    #   BoardCase.new(" ", i)  
+
   end
- 
-     #TO DO :
-    #Quand la classe s'initialize, elle doit créer 9 instances BoardCases
+ 	#TO DO : #Quand la classe s'initialize, elle doit créer 9 instances BoardCases
+    
     #Ces instances sont rangées dans une array qui est l'attr_accessor de la classe
   def to_s
 
@@ -67,20 +64,30 @@ end
 
 class Player
 #   #TO DO : la classe a 2 attr_accessor, son nom, sa valeur (X ou O). Elle a un attr_writer : il a gagné ?
-  attr_accessor :nom, :valeur
-  attr_writer :etat
+  attr_accessor :name, :value
+  attr_writer :status
 
-  def initialize (nom, valeur)
+  def initialize (name, value)
 #     #TO DO : doit régler son nom, sa valeur, son état de victoire
-    @nom = nom
-    @valeur = valeur
-    @etat = nil
+    @name = name
+    @value = value
+    @status = "win"
+
   end
 
 class Game
 
   def initialize
-#     #TO DO : créé 2 joueurs, créé un board
+#TO DO : créé 2 joueurs
+  	puts "Prénom joueur 1?"
+
+  	puts "Prénom joueur 2?"
+
+  @player1 = 	
+
+
+# créé un board
+	@board = board.new
   end
 
   def go
